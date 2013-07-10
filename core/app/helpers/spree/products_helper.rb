@@ -32,6 +32,7 @@ module Spree
 
     # converts line breaks in product description into <p> tags (for html display purposes)
     def product_description(product)
+      return "" unless product.description
       if Spree::Config[:show_raw_product_description]
         raw(product.description)
       else
